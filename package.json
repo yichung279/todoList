@@ -1,0 +1,22 @@
+{
+  "name": "todoList",
+  "version": "1.0.0",
+  "main": "app/index.pug",
+  "repository": "git@github.com:yichung279/todoList.git",
+  "author": "yiz <ql3895619@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --public-url ./ app/index.pug"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.0",
+    "parcel": "^1.12.3",
+    "pug": "^2.0.4",
+    "sass": "^1.22.1",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "semantic-ui-offline": "^2.4.1-1",
+    "vue": "^2.6.10"
+  }
+}
