@@ -2,7 +2,7 @@
 #app
 
   #input.ui.input.action
-    input(type="text", v-model='todo', placeholder="add todo...")
+    input(type="text", v-model='todo', placeholder="add todo..." @keydown.enter='addTask()')
     button.ui.icon.button(@click='addTask()')
       i.plus.icon
 
