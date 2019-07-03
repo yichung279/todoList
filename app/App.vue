@@ -7,12 +7,12 @@
       i.plus.icon
 
   .task(v-for="task in tasks")
-    .ui.checkbox(@click='toggleTask(task.name)')
+    .ui.checkbox(@click='toggleTask(task)')
       input(type="checkbox" v-model='task.toggle')
       label(v-if='!task.toggle') {{task.name}}
       label(v-if='task.toggle')
         del {{task.name}}
-    i.delete.icon(v-if='task.toggle' @click='rmTask(task.name)')
+    i.delete.icon(v-if='task.toggle' @click='rmTask(task)')
 
 </template>
 
@@ -37,12 +37,12 @@ export default {
     },
 
     rmTask(tsk) {
-      this.tasks = this.tasks.filter(task => task.name != tsk)
+      this.tasks = this.tasks.filter(task => task != tsk)
     },
 
     toggleTask(tsk) {
-      const toggle = this.tasks.find(task => task.name === tsk).toggle
-      this.tasks.find(task => task.name === tsk).toggle = !toggle
+      const toggle = this.tasks.find(task => task === tsk).toggle
+      this.tasks.find(task => task === tsk).toggle = !toggle
 
     }
   }
