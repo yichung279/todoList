@@ -13,11 +13,16 @@
       label(v-if='task.toggle')
         del {{task.name}}
     i.delete.icon(v-if='task.toggle' @click='rmTask(task)')
+    task-detail(:detail="task.detail")
 
 </template>
 
 <script>
 export default {
+
+  components:{
+    'task-detail': require('./AppDetail.vue').default
+  },
 
   data() {return {
     todo: 'Data binding is cool!',
@@ -26,11 +31,12 @@ export default {
 
   methods: {
 
-    addTask(){ 
+    addTask(){
       if (!this.todo)
         return
       this.tasks.push({
         name: this.todo,
+        detail: 'aaaa',
         toggle: false
       })
       this.todo = ''
